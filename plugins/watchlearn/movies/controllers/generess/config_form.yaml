@@ -1,0 +1,10 @@
+name: Generess
+form: $/watchlearn/movies/models/genere/fields.yaml
+modelClass: Watchlearn\Movies\Models\Genere
+defaultRedirect: watchlearn/movies/generess
+create:
+    redirect: 'watchlearn/movies/generess/update/:id'
+    redirectClose: watchlearn/movies/generess
+update:
+    redirect: watchlearn/movies/generess
+    redirectClose: watchlearn/movies/generess

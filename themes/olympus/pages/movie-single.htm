@@ -1,0 +1,59 @@
+title = "Movie single"
+url = "/movies/movie/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Watchlearn\Movies\Models\Movie"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+
+[session]
+security = "user"
+redirect = "login"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+
+{% if record %}
+    <h2>{{record.name}}</h2>
+<img src="{{record.poster.thumb(200,auto)}}" alt="">
+    
+    <h4>{{record.year}}</h4>
+    <h3>description</h3>
+    {{record.description|raw}}
+
+    <h3>Actors</h3>
+    {% for actor in record.actors %}
+
+    {{actor.name}} {{actor.lastname}} <br>
+
+    {% endfor %}
+
+
+    <h3>Galley</h3>
+   <ul class="gallery clearfix" style="display:inline-block;">
+       {% for image in record.movie_gallery %}
+
+      <li style="display:inline-block; justify-content:space-around;" >
+        <a href="{{image.path}}">
+       <img src="{{image.thumb(80,80,{'mode':'crop'})}}" alt=""> </a>
+      </li> 
+
+       {% endfor %}
+
+   </ul> 
+   
+   <h3>Generes</h3>
+   {% for genere in record.generes %}
+  <a href="{{'generes'|page({slug:genere.genere_title})}}">{{genere.genere_title}}</a> <br>
+  
+       {% endfor %}
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

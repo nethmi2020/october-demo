@@ -1,0 +1,54 @@
+1608904543a:1:{s:12:"homepage.htm";a:10:{s:8:"fileName";s:12:"homepage.htm";s:7:"content";s:971:"title = "Homepage"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+<h1> 
+Welcome {{user.name}} <br>
+This is our home page!!
+</h1>
+
+
+
+
+{% if not user %}
+					
+					
+					{% else %}
+					
+                    <h3>Profile Details</h3>
+                    <ul>
+                        <li>{{user.name}}</li>
+                        <li>{{user.email}}</li>
+                    </ul> <br><br><br>
+                    {% endif %}
+					
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel velit optio eos. Voluptatem nulla excepturi, numquam eaque reprehenderit, doloribus architecto amet deserunt autem consequuntur aspernatur odit dolores est porro accusamus eos labore rem quidem iure explicabo? Iusto, quas dolores. Commodi!</p>{% component 'blogPosts' %}";s:5:"mtime";i:1608091830;s:6:"markup";s:715:"<h1> 
+Welcome {{user.name}} <br>
+This is our home page!!
+</h1>
+
+
+
+
+{% if not user %}
+					
+					
+					{% else %}
+					
+                    <h3>Profile Details</h3>
+                    <ul>
+                        <li>{{user.name}}</li>
+                        <li>{{user.email}}</li>
+                    </ul> <br><br><br>
+                    {% endif %}
+					
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel velit optio eos. Voluptatem nulla excepturi, numquam eaque reprehenderit, doloribus architecto amet deserunt autem consequuntur aspernatur odit dolores est porro accusamus eos labore rem quidem iure explicabo? Iusto, quas dolores. Commodi!</p>{% component 'blogPosts' %}";s:4:"code";N;s:5:"title";s:8:"Homepage";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:13:"blog/category";s:8:"postPage";s:9:"blog/post";}}}

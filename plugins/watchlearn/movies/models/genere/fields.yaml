@@ -1,0 +1,12 @@
+fields:
+    genere_title:
+        label: Title
+        span: left
+        type: text
+    slug:
+        label: Slug
+        span: right
+        preset:
+            field: genere_title
+            type: slug
+        type: text

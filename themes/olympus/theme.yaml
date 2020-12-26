@@ -1,0 +1,16 @@
+name: olympus
+description: ''
+author: nethmi
+homepage: 'http://octobercms2.com'
+code: ''
+
+form:
+  fields:
+    site name:
+      label: Site name
+      comment: I like this theme
+      default: My Amazing site
+    header_color:
+      label: Header Color
+      type: colorpicker
+

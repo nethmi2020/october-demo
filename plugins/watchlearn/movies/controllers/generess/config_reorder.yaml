@@ -1,0 +1,4 @@
+title: Generess
+modelClass: Watchlearn\Movies\Models\Genere
+toolbar:
+    buttons: reorder_toolbar

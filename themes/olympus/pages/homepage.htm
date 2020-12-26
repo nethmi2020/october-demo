@@ -1,0 +1,34 @@
+title = "Homepage"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+<h1> 
+Welcome {{user.name}} <br>
+This is our home page!!
+</h1>
+
+
+
+
+{% if not user %}
+					
+					
+					{% else %}
+					
+                    <h3>Profile Details</h3>
+                    <ul>
+                        <li>{{user.name}}</li>
+                        <li>{{user.email}}</li>
+                    </ul> <br><br><br>
+                    {% endif %}
+					
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel velit optio eos. Voluptatem nulla excepturi, numquam eaque reprehenderit, doloribus architecto amet deserunt autem consequuntur aspernatur odit dolores est porro accusamus eos labore rem quidem iure explicabo? Iusto, quas dolores. Commodi!</p>{% component 'blogPosts' %}

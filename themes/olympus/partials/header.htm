@@ -1,0 +1,50 @@
+[session]
+security = "all"
+==
+<header class="main-head">
+    <div class="container clearfix">
+        <!-- <h1 class="logo">October Movies</h1> -->
+      
+        <nav  >
+            <div class="container">
+           <!--  <a class="navbar-brand" href="#">October</a> -->
+            <ul class="nav navbar-nav pull-xs-right">
+                <li class="nav-item{{ this.page.baseFileName == 'home' ? ' active' }}">
+					<a class="nav-link" href="{{ 'homepage'|page }}">Home</a>
+                </li>
+                <li class="nav-item{{ this.page.baseFileName == 'movies' ? ' active' }}">
+					<a class="nav-link" href="{{ 'movies'|page }}">Movies</a>
+				</li>
+				
+				 <li class="nav-item{{ this.page.baseFileName == 'login' ? ' active' }}">
+					<a class="nav-link" href="{{ 'login'|page }}">
+					
+					{% if not user %}
+					Login
+					
+					{% else %}
+					
+					User
+					<!-- {{user.name}} -->
+					
+					{% endif%}
+					
+					</a>
+				</li>
+				
+					{% if  user%}
+                
+                 <li class="nav-item{{ this.page.baseFileName == 'add-actors' ? ' active' }}">
+					<a class="nav-link" href="{{ 'add-actors'|page }}">Actors</a>
+				</li>
+             
+                {% endif %}
+                
+                	{% if  user%}
+                <li> <a href="#" data-request="onLogout" data-request-data="redirect:'/'">Logout</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        </nav>
+    </div>
+</header>
